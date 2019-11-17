@@ -9,7 +9,7 @@ public class ValueSlider : MonoBehaviour {
     public void OnValueChangeS()
     {
         this.value.text = slider.value.ToString("F1") + "f";
-        UIMenu.UiMenu.scale = slider.value;
+        UIMenu.UiMenu.Scale = slider.value;
     }
 
 }

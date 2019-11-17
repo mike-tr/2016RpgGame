@@ -8,15 +8,17 @@ using System.Collections;
 public class ScaleElement
 {
     public RectTransform Element;
+    [HideInInspector]
     public Vector2 StartPos;
-    public Vector2 PositionFixValue;
+    public Vector2 OffsetPerScale;
+    public float downScale = 1f;
 
 }
 public class UIMenu : MonoBehaviour {
 
     public static UIMenu UiMenu;
     public ScaleElement[] UIElements;
-    public float  scale
+    public float Scale
     {
         get
         {
@@ -27,8 +29,13 @@ public class UIMenu : MonoBehaviour {
             transform.localScale = new Vector3(value, value, 1);
             foreach(ScaleElement se in UIElements)
             {
-                se.Element.position = se.StartPos + se.PositionFixValue * value;
-                se.Element.localScale = transform.localScale;
+                if(value < 1) {
+                    se.Element.position = se.StartPos - se.OffsetPerScale * (1 - value) * se.downScale;
+                    se.Element.localScale = transform.localScale;
+                } else {
+                    se.Element.position = se.StartPos - se.OffsetPerScale * (1 - value);
+                    se.Element.localScale = transform.localScale;
+                }
             }
         }
     }
@@ -70,6 +77,12 @@ public class UIMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         UiMenu = this;
-        scale = 1.0f;
+
+        foreach (ScaleElement se in UIElements) {
+            se.StartPos = se.Element.position;
+            se.Element.localScale = transform.localScale;
+        }
+
+        Scale = 1.0f;
 	}
 }

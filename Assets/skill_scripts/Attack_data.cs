@@ -29,8 +29,9 @@ public class Attack_data : MonoBehaviour {
             StartCoroutine(Sleep_after(LifeSpan));
         type = dmg_type;
 
-
+        Debug.Log("cll " + collider + " " + name);
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collider);
+
     }
 
     public float DMG(bool a = false)

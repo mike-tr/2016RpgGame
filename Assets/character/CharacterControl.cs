@@ -225,6 +225,7 @@ public class CharacterControl : MonoBehaviour {
     public float max_r = 20f;
     void Attack()
     {
+        Debug.Log("? attack" + name);
         if(weapon == weapon_type.wand)
             return;
 
@@ -287,8 +288,9 @@ public class CharacterControl : MonoBehaviour {
         return Vector2.Angle(Vector2.right, diference) * sign;
     }
 
-    void arrow_shot()
+    void ArrowShoot()
     {
+        Debug.Log("arrow - " + name);
         Transform child = null;
         foreach (Transform t in skill_rec[skill_type.arrow_shot])
         {
@@ -364,7 +366,7 @@ public class CharacterControl : MonoBehaviour {
                 else if (Attacks[i] == skill_type.attack)
                     Attack();
                 else if (Attacks[i] == skill_type.arrow_shot)
-                    arrow_shot();
+                    ArrowShoot();
 
                 Attacks.RemoveAt(i);
             }

@@ -122,8 +122,8 @@ public class Spel1_script : MonoBehaviour {
             transform.localScale = new Vector2(transform.localScale.x * (1 + er), transform.localScale.y * (1 + er));
             sr.color = new Color(1, ((30 - i) / 30), ((30 - i) / 30), ((30 - i) / 90) + 0.66f);
         }
-        transform.localScale = new Vector2(1,1);
-        sr.color = new Color(1,1,1);
+        transform.localScale = new Vector2(.3f,.3f);
+        sr.color = new Color(1,1,1, .75f);
         
         sr.sprite = explode[0];
         rdl = Vector3.zero;
@@ -131,7 +131,7 @@ public class Spel1_script : MonoBehaviour {
         {
             yield return new WaitForSeconds(0.1f);
             sr.sprite = explode[i];
-            my_col.radius = my_col.radius * 0.5f;
+            my_col.radius = my_col.radius * 0.75f;
             
             //transform.localScale = new Vector2(transform.localScale.x * (1 - er * 2), transform.localScale.y * (1 - er * 2));
         }
