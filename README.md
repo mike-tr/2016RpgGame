@@ -1,6 +1,7 @@
 # VeryOldProject
 A game i was making in like 2016...
 
+Dont judge my code, it was a long time ago :D
 
 A game i was working on in high-school, 
 All art are from random places on internet... i have no source, sorry...
