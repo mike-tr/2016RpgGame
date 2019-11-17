@@ -27,8 +27,8 @@ that effected by the item you wear.
 Also, Attacks, Arrows, and 1 Spell.
 All works quite good with some damage.
 
-Also a way to create a Bot, that just randomly tries to kill everyone he see.
-
+Also a way to create a Bot, that just randomly tries to kill everyone he see,
+the bot get random items, when it dies it drops everything.
 Also A* path finding system, that i used and wrote via some youtube tutorial on A*, (Probably Sebastian Lague).
 
 the reason i didnt continue it?
